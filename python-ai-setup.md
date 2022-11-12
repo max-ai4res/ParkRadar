@@ -5,7 +5,7 @@
 $ python -m pip install --upgrade pip
 
 --- GIT ---
-brew install gi
+brew install git
 
 --- GITHUB ---
 # add SSH key to the GIT user
@@ -20,9 +20,13 @@ echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zs
 brew install zsh-syntax-highlighting
 
 -- packages --
-pip install torch   		// ML: machine leaning
+conda install -c conda-forge ipywidgets
+conda install pytorch torchvision torchaudio -c pytorch
+
 pip install datasets 		// numeric and image data type support
 pip install nltk		// natuaral language support
 pip install matplotlib		// data visualization in python 
 pip install numpy		// scientifc computing
 pip install seaborn		// statistical data visualizzation
+
+
