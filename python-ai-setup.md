@@ -66,3 +66,9 @@ pip install nltk		// natuaral language support
 pip install matplotlib		// data visualization in python 
 pip install numpy		// scientifc computing
 pip install seaborn		// statistical data visualizzation
+
+---------------------------------------------------------------------
+-- how to setup an environment like this (I hope...) --
+---------------------------------------------------------------------
+conda activate myEnvName
+conda env update --name myEnvName --file conda-environment.yml --prune
