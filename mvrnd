@@ -1,0 +1,35 @@
+#!/bin/zsh
+
+# Usage: ./move_random_files.zsh N SOURCE DEST
+
+# Check if the correct number of arguments is provided
+if [ $# -ne 3 ]; then
+    echo "Usage: $0 SOURCE DEST N"
+    exit 1
+fi
+
+# Set variables from command line arguments
+SOURCE=$1
+DEST=$2
+N=$3
+
+# Check if source and destination directories exist
+if [ ! -d "$SOURCE" ]; then
+    echo "Error: Source directory '$SOURCE' does not exist."
+    exit 1
+fi
+
+if [ ! -d "$DEST" ]; then
+    echo "Error: Destination directory '$DEST' does not exist."
+    exit 1
+fi
+
+# Move N random files from SOURCE to DEST
+MOVED=0
+for FILE in $(ls -1 "$SOURCE" | gshuf | head -n "$N"); do
+    mv "$SOURCE/$FILE" "$DEST/$FILE"
+    ((MOVED++))
+done
+
+# Display the number of files moved
+echo "$MOVED files moved from '$SOURCE' to '$DEST'"
